@@ -1,22 +1,18 @@
-#include "main.h"
+include "main.h"
 
 /**
- * _strstr - locates a substring
- * @haystack: string to be scanned
- * @needle: string containing the sequence of characters to match
- * Return: pointer to the beginning of the located substring, or NULL if the
-*/
-char *_strstr(char *haystack, char *needle)
+ * print_chessboard - a function that prints a chessboard
+ * @a: an array input to print
+ * Return: Nothing
+ */
+void print_chessboard(char (*a)[8])
 {
-	int i, j;
+	int i = 0, j;
 
-	for (i = 0; haystack[i]; i++)
+	for (; i < 8; i++)
 	{
-		for (j = 0; needle[j] && haystack[i + j]; j++)
-			if (haystack[i + j] != needle[j])
-				break;
-		if (!needle[j])
-			return (haystack + i);
+		for (j = 0; j < 8; j++)
+			_putchar(a[i][j]);
+		_putchar('\n');
 	}
-	return (NULL);
 }
